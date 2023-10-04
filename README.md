@@ -81,13 +81,13 @@ Make ORB_SLAM3 IMU initialize faster than original version
 
 ## 7. Datasets
 ### 7.1 Calibration
-#### 7.1.1 imu_cam3/2023-07-04-04-10-42.bag
+#### 7.1.1 imu_cam3/2023-07-04-04-10-42.bag(8.67G)
 cam and cam-imu calibration
 
 ### 7.2 Realsense
-#### 7.2.1 t10.bag
+#### 7.2.1 t10.bag(105G)
 recorded in museum, 25 mins
 
 ### 7.3 Fusion
-#### 7.3.1 t2.bag
+#### 7.3.1 t2.bag(13.51G)
 recorded in PGR room  
