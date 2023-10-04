@@ -78,3 +78,16 @@ Make ORB_SLAM3 IMU initialize faster than original version
 ### 6.5 [ORB](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6126544)
 ### 6.6 [FAST: Features from Accelerated Segment Test](https://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/AV1011/AV1FeaturefromAcceleratedSegmentTest.pdf?ref=https://githubhelp.com)
 ### 6.7 [BRIEF: Binary Robust Independent Elementary Features](https://os.unil.cloud.switch.ch/tind-customer-epfl/f2565c9b-2939-46b0-90d4-51a560832321?response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27top_1.pdf&response-content-type=application%2Fpdf&AWSAccessKeyId=ded3589a13b4450889b2f728d54861a6&Expires=1695904580&Signature=R4N7TtZNIvziTwWe8oBUHczKjPw%3D)
+
+## 7. Datasets
+### 7.1 Calibration
+#### 7.1.1 imu_cam3/2023-07-04-04-10-42.bag
+cam and cam-imu calibration
+
+### 7.2 Realsense
+#### 7.2.1 t10.bag
+recorded in museum, 25 mins
+
+### 7.3 Fusion
+#### 7.3.1 t2.bag
+recorded in PGR room  
