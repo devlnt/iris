@@ -1,6 +1,24 @@
 # Museum
 ## 1. [ROS noetic](http://wiki.ros.org/noetic)
 OS: ubuntu 20.04 LTS
+### rosbag
+```bash
+# example
+rosbag info t1.bag
+rosbag play t1.bag --pause
+rosbag record /camera/color/image_raw /camera/imu
+```
+### rostopic
+```bash
+# example
+rostopic list # list all topics
+```  
+
+### rviz
+```bash
+rviz
+```
+
 
 ## 2. Opencv
 ### Version >= 4.6.0(c++/python aruco api changed in 4.6.0)
@@ -10,9 +28,25 @@ OS: ubuntu 20.04 LTS
 ## 3. [Kalibr](https://github.com/ethz-asl/kalibr)
 ### **USAGE**: 
 1. Calibration board: [Target](https://drive.google.com/file/d/1DqKWgePodCpAKJCd_Bz-hfiEQOSnn_k0/view), [Config](https://drive.google.com/file/d/1rAe_O8eFD3nR06SzhoGIUrq4BUhuaekn/view)
+
 1. [Multiple camera calibration](https://github.com/ethz-asl/kalibr/wiki/multiple-camera-calibration): support monocular 
 camera calibration
+```bash
+rosrun kalibr kalibr_calibrate_cameras \
+   --target /data/april_6x6_insta.yaml \
+   --bag /data/insta_cali.bag  \
+   --models pinhole-radtan \
+   --topics /camera/color/image_raw
+```
 2. [Camera-IMU calibration](https://github.com/ethz-asl/kalibr/wiki/camera-imu-calibration): get transformation from camera to imu (body frame)
+```bash
+rosrun kalibr kalibr_calibrate_imu_camera \
+	--target april_6x6_insta.yaml \
+	--imu imu.yaml \
+	--imu-models calibrated \
+	--cam t1-camchain.yaml \
+	--bag t1.bag
+```
 3. [Multi-IMU and IMU intrinsic calibration](https://github.com/ethz-asl/kalibr/wiki/Multi-IMU-and-IMU-intrinsic-calibration): get IMU intrinsic(accelerometer_noise_density, accelerometer_random_walk, gyroscope_noise_density, gyroscope_random_walk)
 1. bag_extractor: extract gray images and imu from bag
 ```bash
@@ -22,6 +56,9 @@ rosrun kalibr kalibr_bagextractor --image-topics /camera/color/image_raw --imu-t
 
 ## 4. Realsense
 
+```bash
+roslaunch realsense2_camera rs_d455.launch
+```
 ## 5. SLAM
 ### 5.1 [ORB_SLAM3](https://github.com/UZ-SLAMLab/ORB_SLAM3)  
 original version of ORB_SLAM3
